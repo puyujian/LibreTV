@@ -26,7 +26,7 @@
 
 选择以下任一平台，点击一键部署按钮，即可快速创建自己的 彭彭丹的小影院 实例：
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLibreSpark%2F彭彭丹的小影院) [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LibreSpark/彭彭丹的小影院)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLibreSpark%2F彭彭丹的小影院) [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://example.com)
 
 ## 📋 详细部署指南
 
@@ -152,7 +152,7 @@ npm run dev
 
 ## 🔄 版权信息更新
 
-项目包含一个一键式版权信息与项目名称更新工具 `update_copyright.sh`，您可以用它来快速替换项目中的版权信息和项目名称为您自己的信息：
+项目包含一个一键式信息更新工具 `update_copyright.sh`，您可以用它来快速替换项目中的版权信息、项目名称、投诉邮箱，以及移除GitHub仓库相关信息：
 
 ```bash
 # 替换版权信息
@@ -161,8 +161,14 @@ npm run dev
 # 替换项目名称
 ./update_copyright.sh -p "您的项目名称"
 
-# 同时替换版权信息和项目名称
-./update_copyright.sh -n "您的名字" -y 2025 -p "您的项目名称"
+# 更新投诉邮箱
+./update_copyright.sh -e "您的邮箱@example.com"
+
+# 移除GitHub仓库信息
+./update_copyright.sh -r
+
+# 同时进行多项替换
+./update_copyright.sh -n "您的名字" -y 2025 -p "您的项目名称" -e "您的邮箱" -r
 
 # 或使用交互式模式
 ./update_copyright.sh
