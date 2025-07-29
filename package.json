@@ -1,10 +1,10 @@
 {
-  "name": "libretv",
+  "name": "pengpengdan-cinema",
   "type": "module",
   "version": "1.1.0",
   "private": true,
-  "description": "免费在线视频搜索与观看平台",
-  "author": "bestZwei",
+  "description": "💕 彭彭丹的专属私人影院，为你精心打造的观影天堂 💕",
+  "author": "彭彭丹的迪迦",
   "license": "Apache-2.0",
   "scripts": {
     "dev": "nodemon server.mjs",
