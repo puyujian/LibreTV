@@ -93,7 +93,9 @@ personalizeFile('README.md', [
   { from: 'LibreTV 是一个轻量级、免费的在线视频搜索与观看平台', to: `${config.siteName} 是专为彭彭丹打造的私人影院平台` },
   { from: '自由观影，畅享精彩', to: config.siteSlogan },
   { from: '© 2025 LibreTV', to: `© 2025 ${config.siteName}` },
-  { from: '\\*\\*项目门户\\*\\*：.*', to: `**💖 彭彭丹的专属影院门户 💖**` }
+  { from: '\\*\\*项目门户\\*\\*：.*', to: `**💖 彭彭丹的专属影院门户 💖**` },
+  { from: 'LibreTV 仅作为视频搜索工具', to: `${config.siteName} 仅作为视频搜索工具` },
+  { from: '本项目开发者不对使用本项目产生的任何后果负责', to: `${config.siteName}开发者不对使用本项目产生的任何后果负责` }
 ]);
 
 // 2. 个性化 package.json
@@ -108,7 +110,13 @@ personalizeFile('index.html', [
   { from: '<title>LibreTV - 免费在线视频搜索与观看平台</title>', to: `<title>${config.siteName}</title>` },
   { from: 'content="LibreTV是一个免费的在线视频搜索平台[^"]*"', to: `content="${config.siteDescription}"` },
   { from: 'content="LibreTV Team"', to: `content="${config.authorName}"` },
-  { from: 'class="text-xl font-bold gradient-text">LibreTV<', to: `class="text-xl font-bold gradient-text">${config.shortName}<` }
+  { from: 'class="text-xl font-bold gradient-text">LibreTV<', to: `class="text-xl font-bold gradient-text">${config.shortName}<` },
+  { from: 'class="text-5xl font-bold gradient-text">LibreTV<', to: `class="text-5xl font-bold gradient-text">${config.shortName}<` },
+  { from: 'class="gradient-text font-bold">LibreTV<', to: `class="gradient-text font-bold">${config.shortName}<` },
+  { from: '自由观影，畅享精彩', to: config.siteSlogan },
+  { from: '© 2025 LibreTV', to: `© 2025 ${config.siteName}` },
+  // 删除捐赠链接
+  { from: '\\s*<a href="https://www\\.msf\\.hk[^>]*>捐赠</a>', to: '' }
 ]);
 
 // 4. 个性化 about.html
@@ -118,7 +126,11 @@ personalizeFile('about.html', [
   { from: '<h2 class="text-xl font-semibold">关于LibreTV</h2>', to: `<h2 class="text-xl font-semibold">关于${config.siteName}</h2>` },
   { from: 'LibreTV 是一个免费的在线视频搜索平台', to: `${config.siteName} 是专为彭彭丹打造的私人影院` },
   { from: '© 2025 LibreTV', to: `© 2025 ${config.siteName}` },
-  { from: 'class="gradient-text font-bold">LibreTV<', to: `class="gradient-text font-bold">${config.shortName}<` }
+  { from: 'class="gradient-text font-bold">LibreTV<', to: `class="gradient-text font-bold">${config.shortName}<` },
+  // 删除GitHub仓库介绍区块
+  { from: '\\s*<div class="bg-\\[#1a1a1a\\][^>]*>[\\s\\S]*?本项目代码托管在 GitHub 上[\\s\\S]*?</div>', to: '' },
+  // 删除捐赠链接
+  { from: '\\s*<a href="https://www\\.msf\\.hk[^>]*>捐赠</a>', to: '' }
 ]);
 
 // 5. 个性化 player.html
