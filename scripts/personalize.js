@@ -5,8 +5,12 @@
  * 此脚本将LibreTV个性化为彭彭丹的专属影院
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // 个性化配置
 const config = {
