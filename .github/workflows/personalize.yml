@@ -1,0 +1,58 @@
+name: 彭彭丹专属影院个性化
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # 在同步后1小时执行个性化
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Upstream Sync"]
+    types:
+      - completed
+
+jobs:
+  personalize_for_pengpengdan:
+    name: 💝 为彭彭丹定制专属影院
+    runs-on: ubuntu-latest
+    if: ${{ github.event.repository.fork }}
+
+    steps:
+      - name: 💖 检出仓库
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: 🎬 个性化为彭彭丹的专属影院
+        run: |
+          echo "💝 开始为彭彭丹定制专属影院..."
+
+          # 确保脚本目录存在
+          mkdir -p scripts
+
+          # 运行个性化脚本
+          node scripts/personalize.js
+
+          echo "✨ 个性化完成！已为彭彭丹定制专属影院"
+
+      - name: 💕 提交个性化更改
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "彭彭丹专属机器人"
+          
+          if [[ -n $(git status --porcelain) ]]; then
+            git add .
+            git commit -m "💖 为彭彭丹定制专属影院 - $(date '+%Y-%m-%d %H:%M:%S')"
+            git push
+            echo "💝 个性化更改已提交并推送"
+          else
+            echo "💫 没有需要提交的更改"
+          fi
+
+      - name: 🎉 完成通知
+        run: |
+          echo "🎬✨ 彭彭丹的专属影院已准备就绪！"
+          echo "💖 所有LibreTV标识已替换为充满爱意的个性化内容"
+          echo "🌟 享受你的专属观影时光吧！"
