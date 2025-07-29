@@ -19,6 +19,7 @@ const config = {
   siteSlogan: "💖 专属于你的浪漫观影时光 💖",
   authorName: "彭彭丹的迪迦",
   shortName: "💖 彭彭丹专属 💖",
+  mainTitle: "彭彭丹影院", // 主页面大标题
   packageName: "pengpengdan-cinema"
 };
 
@@ -111,7 +112,7 @@ personalizeFile('index.html', [
   { from: 'content="LibreTV是一个免费的在线视频搜索平台[^"]*"', to: `content="${config.siteDescription}"` },
   { from: 'content="LibreTV Team"', to: `content="${config.authorName}"` },
   { from: 'class="text-xl font-bold gradient-text">LibreTV<', to: `class="text-xl font-bold gradient-text">${config.shortName}<` },
-  { from: 'class="text-5xl font-bold gradient-text">LibreTV<', to: `class="text-5xl font-bold gradient-text">${config.shortName}<` },
+  { from: 'class="text-5xl font-bold gradient-text">LibreTV<', to: `class="text-5xl font-bold gradient-text">${config.mainTitle}<` },
   { from: 'class="gradient-text font-bold">LibreTV<', to: `class="gradient-text font-bold">${config.shortName}<` },
   { from: '自由观影，畅享精彩', to: config.siteSlogan },
   { from: '© 2025 LibreTV', to: `© 2025 ${config.siteName}` },
