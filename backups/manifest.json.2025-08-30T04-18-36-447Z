@@ -1,0 +1,18 @@
+{
+  "name": "彭彭丹的专属影院",
+  "short_name": "彭彭丹专属",
+  "description": "💕 彭彭丹的专属私人影院，为你精心打造的观影天堂 💕",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0f1622",
+  "theme_color": "#000000",
+  "apple-mobile-web-app-capable": "yes",
+  "apple-mobile-web-app-status-bar-style": "black",
+  "icons": [
+    {
+      "src": "image/logo-black.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
