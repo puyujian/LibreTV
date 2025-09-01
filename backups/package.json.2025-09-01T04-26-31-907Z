@@ -1,0 +1,23 @@
+{
+  "name": "pengpengdan-cinema",
+  "type": "module",
+  "version": "1.1.0",
+  "private": true,
+  "description": "💕 彭彭丹的专属私人影院，为你精心打造的观影天堂 💕",
+  "author": "彭彭丹的迪迦",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "nodemon server.mjs",
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
